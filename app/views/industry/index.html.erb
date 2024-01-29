@@ -1,0 +1,49 @@
+<%= render 'shared/header' %>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .home_header {
+            background-color: #206868;
+            border-radius:0px 0px 15px 15px;
+            color: #FFFFFF;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            }
+            .home-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 2%;
+
+            }
+            .responsive-image {
+            max-width: 100%;
+            height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="home_header">
+            <h2>Pragmatic hard and soft skills development for industry </h2>
+        </div>
+        <div class="home-main">
+            
+
+            <% @industry.each do |industry| %>
+                <% if industry.image.attached? %>
+                    <%= image_tag industry.image , class: "responsive-image", alt: "Responsive image"%>
+                <% end %>
+            <% end %>
+        </div>
+    </body>
+</html>
+
+<%= render 'shared/footer_new' %>
+
+

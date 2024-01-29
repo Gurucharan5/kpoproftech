@@ -1,0 +1,76 @@
+<!-- app/views/shared/_footer.html.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .footer{
+        display: flex;
+        margin: 3%;
+
+      }
+      .left{
+        flex: 1;
+      }
+      .right{
+        flex: 1;
+        display:flex;
+        flex-direction: column;
+        justify-content: right;
+        padding-top: 5%;
+      }
+      .right b {
+        text-align: center;
+      }
+      .right div{
+        text-align: center;
+      }
+
+      footer{
+        background-color:rgba(0, 38, 96, 0.87);
+        color:#FFFFFF;
+        padding: 3%;
+      }
+
+      footer p{
+        text-align: center;
+      }
+
+      .logo {
+        text-align:center;
+      }
+
+      .logo img{
+        background-color: #FFFFFF; 
+        
+      }
+    </style>
+  </head>
+  <body>
+
+    <footer>
+      <div class="footer">
+        <div class="left">
+          <div>
+            <div class= "logo"><img src="<%=asset_path('footer_logo.png')%>" alt="Your Logo"></div>
+            
+            <b>Proftech Knowledge Process Outsourcing Pvt. Ltd</b>
+            <div>Corporate office : A-32,Kurichi 
+                  Housing Unit-2 Madhukari 
+                  Market
+                  Mani Road SidcoPost ,Sundarapuram
+                  Coimbatore-641021
+            </div>
+          </div>
+          
+        </div>
+        <div class="right">
+          <b>Contact Us</b>
+          <div>+91 96777 84313</div>
+          <div>kpopragmatic@gmail.com</div>
+        </div>
+      </div>
+      <hr>
+      <p>&copy; 2024 Your Company</p>
+    </footer>
+  </body>
+</html>

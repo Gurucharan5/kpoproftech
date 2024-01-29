@@ -1,0 +1,60 @@
+<!-- app/views/home/index.html.erb -->
+<%= render 'shared/header' %>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            }
+            .home {
+            background-image: url("<%=image_path('home_background.png')%>"); /* Replace 'background_image.jpg' with the actual filename of your image */
+            background-size: cover; /* Adjust as needed */
+            
+            background-position: center; /* This property centers the background image within the container */
+            background-repeat: no-repeat; /* This property prevents the background image from repeating */ /* Set text color to white or a color that contrasts well with your background */
+            width: 100%;
+            }
+
+            .text-content {
+            display: flex;
+            flex-direction: column;
+            margin: 10%;
+            font-weight: 700;
+            }
+            .text-content p {
+            font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class= "main-content">
+            <div class= "home">
+                <div class= "text-content">
+                    <p>KPO stands for Knowledge Process Outsourcing that demand domain pertinent knowledge of
+                    high level related to information, research, analytical skill, interpretation, technical, judgment,
+                    decision making and business expertise which are an outgrowth of BPO.</p>
+                    <p>KPO- Pragmatic handle complex, technical, allied and associated works that requires highly educated and skilled employees.</p>
+                    <p>Proftech KPO Pvt. Ltd is capable you to support the core and non-core function of your business
+                    with our efficient and reliable KPO solutions. We have equipped with highly seasoned
+                    professional team in accordance with the nature of the modern business at pace with the new
+                    market economy.</p>
+                    <p>KPO-Pragmatic is with diversified activities and extensive domain knowledge to perform with
+                    competitive edge.</p>
+                    
+
+                    
+
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+<%= render 'shared/footer_new' %>

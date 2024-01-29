@@ -1,0 +1,107 @@
+<%= render 'shared/header' %>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .home_header {
+            background-color: #206868;
+            border-radius:0px 0px 15px 15px;
+            color: #FFFFFF;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            }
+            .home-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 2%;
+
+            }
+            .container {
+            width: 100%;
+            margin: 0 auto;
+            }
+
+            .post-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow for a glowing effect */
+            transition: box-shadow 0.3s ease; /* Adding a smooth transition effect */
+            }
+
+            .post-card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase the shadow on hover for a stronger glowing effect */
+            }
+
+            .post-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            }
+
+            .post-content {
+            padding: 20px;
+            }
+
+            .post-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            }
+
+            .post-body {
+            font-size: 16px;
+            line-height: 1.6;
+            }
+            .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 5%;
+            }
+            .responsive-image {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            }
+            .main {
+            /* background-color: #A4B0BD; */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="home_header">
+            <h2>Blog</h2>
+        </div>
+        <div class="main-content">
+            <% @blog.each do |home| %>
+                <div class="container mt-4">
+                    <div class="post-card">
+                        <% if home.image.attached? %>
+                            <%= image_tag home.image , class: "responsive-image", alt: "Responsive image"%>
+
+                        <% end %>
+                        <div class="post-content">
+
+                            <h1 class="post-title"><%= home.title %></h1>
+                            <p class="post-body"><%= home.content %></p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            <% end %>
+        </div>
+    </body>
+</html>
+
+<%= render 'shared/footer_new' %>
+
+

@@ -1,0 +1,236 @@
+<%= render 'shared/header' %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <%# <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> %>
+        <style>
+            .main-content{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .contact-first {
+                background-image: url("<%=image_path('Rectangle 5.png')%>"); /* Replace 'background_image.jpg' with the actual filename of your image */
+                background-size: cover; /* Adjust as needed */
+                
+                background-position: center; /* This property centers the background image within the container */
+                background-repeat: no-repeat; /* This property prevents the background image from repeating */ /* Set text color to white or a color that contrasts well with your background */
+                width: 100%;
+            }
+            .contact-second{
+                background-image: url("<%=image_path('contact_background.png')%>"); /* Replace 'background_image.jpg' with the actual filename of your image */
+                background-size: cover; /* Adjust as needed */
+                
+                background-position: center; /* This property centers the background image within the container */
+                background-repeat: no-repeat; /* This property prevents the background image from repeating */ /* Set text color to white or a color that contrasts well with your background */
+                width: 100%;    
+                
+            }
+            .contact-first h2{
+                padding-bottom: 7%;
+                padding-left: 2%;
+            }
+            .contact-first h4{
+                padding: 2%;
+            }
+
+            input[type=text] {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            }
+
+            input[type=text]:focus {
+            border: 3px solid #555;
+            }
+
+            textarea {
+            width: 90%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+            }
+            .main-form{
+                max-width: 700px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #000000;
+                border-radius: 5px; 
+                background-color: #FFFFFF;
+            }
+
+            
+            .main {
+                padding: 2%;
+            }
+            h3 {
+                text-align: center;
+            }
+
+            p {
+                color: #FFFFFF;
+            }
+            .contact{
+              
+            }
+            h2{
+                color: #FFFFFF;
+            }
+            
+            .row{
+              padding: 2%;
+              display:flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content:center;
+              gap: 2%;
+            }
+            /* Create three unequal columns that floats next to each other */
+            .column {
+              float: left;
+              padding: 10px;
+            }
+
+            /* Left and right column */
+            .column.side {
+              width: 20%;
+              height: 200px;
+              background-color: #002660DE;
+              padding:2%;
+            }
+
+            /* Middle column */
+            .column.middle {
+              width: 20%;
+              height: 200px;
+              padding:2%;
+              background-color: #002660DE;
+            }
+
+            * {box-sizing: border-box;}
+
+            input[type=text], select, textarea {
+              width: 100%;
+              padding: 12px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              margin-top: 6px;
+              margin-bottom: 16px;
+              resize: vertical;
+            }
+
+            input[type=submit] {
+              background-color: #04AA6D;
+              color: white;
+              padding: 12px 20px;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+              background-color: #45a049;
+            }
+
+            .container {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+            }
+            @media screen and (max-width: 600px) {
+              .column.side, .column.middle {
+                width: 100%;
+                margin: 2%;
+              }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class= "main-content">
+            <div class="contact-first">
+                <h2>CONTACT US</h2>
+                <h4>Home ---------> Contact Us</h4>
+            </div>
+            <div class="contact-second">
+              <div class= "about">
+                <div>
+                    <h3>GET IN TOUCH WITH US</h3>
+                </div>
+                
+                <div class="row">
+                  <div class="column side">
+                    <i class="fa-solid fa-envelope" style="color: #FFFFFF;"></i>
+                    <p>kpopragmatic@gmail.com</p>
+                  </div>
+                  
+                  <div class="column middle">
+                    <i class="fa-solid fa-phone" style="color: #FFFFFF;"></i>
+                    <p>+91 96777 84313</p>
+                    
+                  </div>
+                  
+                  <div class="column side">
+                    <i class="fa-solid fa-map-location-dot" style="color: #FFFFFF;"></i>
+                    <p>A-32,Kurichi Housing Unit-2 Madhukari 
+                    MarketMani Road SidcoPost,Sundarapuram
+                    Coimbatore-641021
+                    </p>
+                  </div>
+                </div>
+                
+                
+              </div>
+                
+              <div class="contact-form">
+                <h3>POST YOUR REQUIREMENT</h3>
+                <div class ="main">
+                  <div class="main-form">
+                    <div class="container">
+                      
+
+                      <%= form_with model: @contact, local: true do |form| %>
+                        
+                        <div class="form-group">
+                          <%= form.label :name %>
+                          <%= form.text_field :name, class: 'form-control',placeholder: "Your Name" %>
+                        </div>
+                        <div class="form-group">
+                          <%= form.label :email %>
+                          <%= form.text_field :email, class: 'form-control',placeholder: "Your Email"  %>
+                        </div>
+
+                        <div class="form-group">
+                          <%= form.label :subject %>
+                          <%= form.text_field :subject, class: 'form-control',placeholder: "Your Subject"  %>
+                        </div>
+
+                        <div class="form-group">
+                          <%= form.label :message %>
+                          <%= form.text_area :message, class: 'form-control',placeholder: "Enter your message here..."  %>
+                        </div>
+
+                        <%= form.submit "Send Message", class: 'btn btn-primary' %>
+                      <% end %>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </body>
+</html>
+<%= render 'shared/footer_new' %>
