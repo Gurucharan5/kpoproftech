@@ -30,6 +30,9 @@ gem "devise"
 
 gem "font-awesome-sass", "~> 6.5.1"
 
+#active storage
+gem "aws-sdk-s3", require: false
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
